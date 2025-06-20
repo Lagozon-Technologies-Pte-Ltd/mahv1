@@ -1,0 +1,154 @@
+{
+   
+"PARTS_RUNNING_REPAIR": (
+    "1. Use sv_ro_bill_hdr_sk to join MH_RO_HDR_DETAILS and MH_RO_PARTS.\n"
+    "2. Use MODL_CD to join MH_MODEL_MASTER and MH_RO_HDR_DETAILS to get MODL_CO, MODL_GROP_DESC, and FAMILY_DESC.\n"
+    "3. USE parnt_grop, loctn_cd AND prodct_divsn TO JOIN THE TABLES MH_AD_AI_DIMENSION AND MH_RO_HDR_DETAILS TO GET DEALER NAME, DEALER ZONE AND DEALER AREA OFFICE. Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values (e.g., 'Show sales in the South Zone' is like WHERE zone_name = 'South Zone').\n"
+    "4. In MH_RO_HDR_DETAILS, filter: (SERV_CATGRY_DESC IN ('Free Service', 'Paid Service', 'Repair') AND service group = 'Mechanical') OR (SERV_CATGRY_DESC = 'Accessories' AND service group = 'Accessories') OR (SERV_CATGRY_DESC = 'Bodyshop' AND service group = 'Bodyshop') OR (SERV_CATGRY_DESC = 'Charging' AND service group = 'Others') OR (SERV_CATGRY_DESC IN ('En-Route', 'Pre-Sale/PDI') AND service group = 'Pre-Sale/PDI').\n"
+    "5. In MH_RO_PARTS, filter where lower(part_category_group) = lower('Spares') AND lower(part_desc) NOT LIKE lower('%filter%').\n"
+    "6. For OEM Parts, filter MH_RO_PARTS where OEM Part Indicator = 'Y'.\n"
+    "7. For Local Parts, filter MH_RO_PARTS where OEM Part Indicator = 'N'.\n"
+    "8. For general Parts, consider both 'Y' and 'N' in OEM Part Indicator.\n"
+    "9. Use Part Quantity for count metrics and partAmount for value metrics in MH_RO_PARTS.\n"
+    "10. Use RO_Bill_Date for PART_NUMBR trend analysis over time.\n"
+    "11. Use RO_Bill_Date for any date-range-based PART_NUMBR data retrieval.\n"
+    "12. For Top Parts: GROUP BY PART_NUMBR, SELECT PART_NUMBR, PART_DESC, SUM(PART_NUMBR) as Total Count, SUM(partAmount) as Total Value, ORDER BY Total Count DESC.\n"
+    "13. For Top Dealers by part consumption: Use parnt_grop, loctn_cd, and prodct_divsn as key; GROUP BY delr_name; SUM(PART_NUMBR) as Total Count, SUM(partAmount) as Total Value; ORDER BY Total Count DESC.\n"
+    "14. Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values. When asked for Top Zone (zone_name as Dealer Zone and area_name as Dealer Area Office) with top parts consumption, use Parent Group Code, Location Code AND prodct_divsn as unique key and do the calculation. Display zone_name as Dealer ZONE, area_name as DEALER AREA OFFICE, total sum of PART_NUMBR as Total Count and total sum of partAmount as Total Value, and display in descending order of Total Count by default.\n"
+    "15. For Top Models: Use model_cd as key; GROUP BY modl_grop_desc, famly_desc; DISPLAY Dealer Name, total sum of PART_NUMBR as Total Count and total sum of partAmount as Total Value, in descending order of Total Count by default.\n"
+    "16. For Top Parts within a Family or Model Group: GROUP BY PART_NUMBR; SELECT PART_NUMBR, PART_DESC, COUNT(PART_NUMBR) as Total Count, SUM(partAmount) as Total Value; FILTER by famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n"
+    "17. For Top Parts within Zone, Area, Parent, and Location: GROUP BY PART_NUMBR; SELECT PART_NUMBR, PART_DESC, COUNT(PART_NUMBR), SUM(partAmount); FILTER by zone_name, area_name, parnt_grop, loctn_name, famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n"
+),
+
+
+'LABOUR_RUNNING_REPAIR': (
+    "Apply business rules:\n"
+    "1. USE sv_ro_bill_hdr_sk COLUMN TO JOIN THE TABLES MH_RO_HDR_DETAILS AND MH_RO_LABOUR.\n"
+    "2. USE MODEL_CD COLUMN TO JOIN THE TABLES MH_MODEL_MASTER AND MH_RO_HDR_DETAILS TO GET MODEL_CO, MODL_GROP_DESC AND FAMILY_DESC INFORMATION.\n"
+    "3. USE parnt_grop, loctn_cd AND prodct_divsn TO JOIN THE TABLES MH_AD_AI_DIMENSION AND MH_RO_HDR_DETAILS TO GET DEALER NAME, DEALER ZONE AND DEALER AREA OFFICE.Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values (e.g., 'Show sales in the South Zone' is like WHERE zone_name = 'South Zone').\n"
+    "4. In MH_RO_HDR_DETAILS, filter: (SERV_CATGRY_DESC IN ('Free Service', 'Paid Service', 'Repair') AND service group = 'Mechanical') OR (SERV_CATGRY_DESC = 'Accessories' AND service group = 'Accessories') OR (SERV_CATGRY_DESC = 'Bodyshop' AND service group = 'Bodyshop') OR (SERV_CATGRY_DESC = 'Charging' AND service group = 'Others') OR (SERV_CATGRY_DESC IN ('En-Route', 'Pre-Sale/PDI') AND service group = 'Pre-Sale/PDI').\n"
+    "5. In MH_RO_LABOUR, filter where labour_group_name NOT LIKE '%Local%'.\n"
+    "6. For OEM Labour, filter MH_RO_LABOUR labour_type_name = 'OEM Defined'.\n"
+    "7. For Local Labour, filter MH_RO_LABOUR labour_type_name  = 'Dealer Defined'\n"
+    "8. For Labour, consider both 'OEM Defined' AND 'Dealer Defined' for labour_type_name in MH_RO_LABOUR.\n"
+    "9. Use 'STANDRD_HRS' as Labour Hrs from  for count-based metrics and 'labrAmount'  as labour Amount from for Total Value calculations in MH_RO_LABOUR.\n"
+    "10. Use RO_Bill_Date for \"labr_code\" as Labour Code trend analysis over time.\n"
+    "11. Use RO_Bill_Date for any date-range-based \"labr_code\" as Labour Code data retrieval.\n"
+    "12. For Top Labour: GROUP BY labr_code, SELECT labr_code, labr_desc, SUM(STANDRD_HRS) as Total Count, SUM(labrAmount) as Total Value, and display ORDER BY Total Count DESC.\n"
+    "13. For Top Dealers by highest Labour consumption: Use parnt_grop, loctn_cd, and prodct_divsn as unique key; GROUP BY delr_name; Display delr_name as Dealer Name, SUM(STANDRD_HRS) as Total Count, SUM(labrAmount) as Total Value; ORDER BY Total Count DESC.\n"
+    "14. Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values. When asked for highest or Top Zone (zone_name as Dealer Zone and area_name as Dealer Area Office) with highest or Top Labour consumption, use Parent Group Code, Location Code AND prodct_divsn as unique key and do the calculation. Display zone_name as Dealer ZONE, area_name as DEALER AREA OFFICE, total sum of STANDRD_HRS as Total Count and total sum of labrAmount as Total Value, and display in descending order of Total Count by default.\n"
+    "15. For top or highest Models (MODEL_GROUP AND FAMILY_DESC)with top or highest Labour consumption: Use model_cd as unique key; GROUP BY modl_grop_desc, famly_desc; DISPLAY MODL_GROUP_DESC, FAMILY_DESC, Dealer Name, total sum of STANDRD_HRS as Total Count and total sum of labrAmount as Total Value, in descending order of Total Count by default.\n"
+    "16. For Top or highest Labour consumption within a Family or Model Group: GROUP BY labr_code; SELECT labr_code, labr_desc, SUM(STANDRD_HRS) as Total Count, SUM(labrAmount) as Total Value; FILTER by famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n"
+    "17. For Top or highest Labour consumption within Zone, Area, Parent, and Location: GROUP BY labr_code; SELECT labr_code, labr_desc, SUM(STANDRD_HRS), SUM(labrAmount); FILTER by zone_name, area_name, parnt_grop, loctn_name, famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n"
+),
+
+
+'PARTS_CODE_CONSUMPTION': (
+    "1. USE sv_ro_bill_hdr_sk COLUMN TO JOIN THE TABLES MH_RO_HDR_DETAILS AND MH_RO_PARTS.\n"
+    "2. USE MODEL_CD COLUMN TO JOIN THE TABLES MH_MODEL_MASTER AND MH_RO_HDR_DETAILS TO GET MODEL_CO, MODL_GROP_DESC AND FAMILY_DESC INFORMATION.\n"
+    "3. USE parnt_grop, loctn_cd AND prodct_divsn TO JOIN THE TABLES MH_AD_AI_DIMENSION AND MH_RO_HDR_DETAILS TO GET DEALER NAME, DEALER ZONE AND DEALER AREA OFFICE.\n"
+    "4. For OEM Parts, add filter: OEM Part Indicator = 'Y'.\n"
+    "5. For Local Parts, add filter: OEM Part Indicator = 'N'.\n"
+    "6. For Parts, consider both 'Y' AND 'N' for OEM Part Indicator.\n"
+    "7. Use Part Quantity for count-based metrics and 'partAmount' as part basic amount for total value calculations.\n"
+    "8. For trend analysis, use RO_Bill_Date to analyze PART_NUMBR over time.\n"
+    "9. When asked for Top Parts, group by PART_NUMBR, return PART_NUMBR, PART_DESC, total count and display in descending order.\n"
+    "10. When asked for Top Dealers with top parts consumption, use Parent Group Code, Location Code AND prodct_divsn as unique key and do the calculation. Display Dealer Name and value.\n"
+    "11. When asked for Top Zone (Dealer Zone) and Area Office (Dealer AREA Office) with top parts consumption, use Parent Group Code, Location Code AND prodct_divsn as unique key and do the calculation. Display Dealer ZONE, DEALER AREA OFFICE and value.\n"
+    "12. When asked for Top Model (MODEL_GROUP AND FAMILY_DESC) with top parts consumption, use model_cd as unique key and do the calculation. Add MODL_GROUP_DESC AND FAMILY_DESC in the display. Display Dealer Name and value.\n"
+    "13. When asked for Top Parts, group by PART_NUMBR, return PART_NUMBR, PART_DESC, total count and display in month-on-month format.\n"
+    "14. When asked for Top Parts, group by PART_NUMBR, return PART_NUMBR, PART_DESC, total count and display in quarter-on-quarter format.\n"
+    "15. When asked for Top Parts, group by PART_NUMBR, return PART_NUMBR, PART_DESC, total count and display in year-on-year format."
+),
+
+'LABOUR_CODE_CONSUMPTION': (
+    "Apply business rules:\n"
+    "1. USE sv_ro_bill_hdr_sk COLUMN TO JOIN THE TABLES MH_RO_HDR_DETAILS AND MH_RO_LABOUR.\n"
+    "2. USE MODEL_CD COLUMN TO JOIN THE TABLES MH_MODEL_MASTER AND MH_RO_HDR_DETAILS TO GET MODEL_CO, MODL_GROP_DESC AND FAMILY_DESC INFORMATION.\n"
+    "3. USE parnt_grop, loctn_cd AND prodct_divsn TO JOIN THE TABLES MH_AD_AI_DIMENSION AND MH_RO_HDR_DETAILS TO GET DEALER NAME, DEALER ZONE AND DEALER AREA OFFICE.\n"
+    "4. For OEM Labour, add filter: labour_type_name = 'OEM Defined' and exclude labour_group_name = 'Local'.\n"
+    "5. For Local Labour, add filter: labour_type_name = 'Dealer Defined' and include labour_group_name = 'Local'.\n"
+    "6. For Labour, consider both 'OEM Defined' and 'Dealer Defined' for labour_type_name.\n"
+    "7. Use Labour Hrs from 'STANDRD_HRS' for count-based metrics and labour amount from 'labrAmount' for total value calculations.\n"
+    "8. For trend analysis, use RO_Bill_Date to analyze Labour Code over time.\n"
+    "9. When asked for highest or top Labour, group by Labour Code. Return Labour Code, Labour Desc, total 'STANDRD_HRS' in descending order.\n"
+    "10. When asked for top Dealers with highest Labour consumption, use Parent Group Code, Location Code AND prodct_divsn as unique key. Display Dealer Name and total of 'STANDRD_HRS' as value in descending order.\n"
+    "11. When asked for top Labour Zone (Dealer Zone) and Area Office (Dealer AREA Office) with highest Labour consumption, use Parent Group Code, Location Code AND prodct_divsn as unique key. Display Dealer ZONE, DEALER AREA OFFICE and total of 'STANDRD_HRS' as value in descending order.\n"
+    "12. When asked for top Model (MODEL_GROUP and FAMILY_DESC) with highest Labour consumption, use model_cd as unique key. Add MODL_GROUP_DESC and FAMILY_DESC in the display. Display Dealer Name and total of 'STANDRD_HRS' as value in descending order.\n"
+    "13. When asked for top Labour, group by Labour Code. Return Labour Code, Labour Desc, total 'STANDRD_HRS' and display in month-on-month format.\n"
+    "14. When asked for top Labour, group by Labour Code. Return Labour Code, Labour Desc, total 'STANDRD_HRS' and display in quarter-on-quarter format.\n"
+    "15. When asked for top Labour, group by Labour Code. Return Labour Code, Labour Desc, total 'STANDRD_HRS' and display in year-on-year format."
+),
+
+
+
+
+
+"WORD_CLOUD_VOC": (
+     "Apply business rules:\n"
+    "1. If the user requests a word cloud, e.g., for a given MODEL_GROP, then return a query instruction that includes the following:\n"
+    "   - Filters: on the specified MODEL_GROP and any date range provided.\n"
+    "   - Columns to include:\n"
+    "     - Model_Grop\n"
+    "     - verbatim_group\n"
+    "     - verbatim_code\n"
+    "     - cust_verbtm_desc\n"
+    "     - verbatim_group_desc\n"
+    "     - demanded_verbatim\n"
+    "   - Include a frequency count based on verbatim_code, using GROUP BY verbatim_code.\n"
+    "   - Exclude demanded_verbatim having words like:\n"
+    "     '%SCHEDULE%', '%WASHING%','%WASHING & CLEANING%', '%MAXICARE%', '%WHEEL ALIGNMENT%', '%WHEEL BALANCE%', '%SERVICE ACTION%', '%10000%', '%1000%', '%5000%', '%KM%'.\n"
+    "  - Use chained NOT LIKE conditions joined with AND to filter out generic or low-signal entries in demanded_verbatim. This ensures accurate exclusion of phrases like 'washing', 'schedule', 'maxicare', 'km', etc.\n"
+
+    "2. Use 'sv_ro_hdr_sk' to join MH_RO_HDR_DETAILS and MH_CUST_VERBATIM.\n"
+    "3. USE parnt_grop, loctn_cd AND prodct_divsn TO JOIN THE TABLES MH_AD_AI_DIMENSION AND MH_RO_HDR_DETAILS TO GET DEALER NAME, DEALER ZONE AND DEALER AREA OFFICE. Allowed Values for Dealer Zone are [ \"South Zone\", \"North Zone\", \"East Zone\", \"West Zone\"] . Translate natural language queries into SQL using the allowed values (e.g., \"Show sales in the South Zone\" is like WHERE zone_name = 'South Zone') \n"
+    "4. Use 'parnt_grop', 'loctn_cd', and 'prodct_divsn' to join MH_AD_AI_DIMENSION and MH_RO_HDR_DETAILS to get Dealer Name, Dealer Zone, and Dealer Area Office; allowed Dealer Zone values are ['South Zone', 'North Zone', 'East Zone', 'West Zone']; translate queries like 'Show sales in the South Zone' to WHERE zone_name = 'South Zone'.\n"
+    "5. Use 'demanded_verbatim' as the text input for Word Cloud generation.\n"
+    "6. Exclude 'demanded_verbatim' values containing keywords like '%SCHEDULE%', '%WASHING%', '%MAXICARE%', '%WHEEL ALIGNMENT%', '%WHEEL BALANCE%', '%SERVICE ACTION%', '%10000%', '%1000%', '%5000%', '%KM%'.\n"
+    "7. Use 'part_code' for part quantity count and 'partAmount' for part value calculations.\n"
+    "8. Use 'STANDRD_HRS' for labour hours and 'labrAmount' for labour cost calculations.\n"
+    "9. In the table 'MH_RO_HDR_DETAILS', filter by:\n"
+    "   - (SERV_CATGRY_DESC IN ('Free Service', 'Paid Service',   'Repair') AND service group = 'Mechanical') OR\n"
+    "   - (SERV_CATGRY_DESC IN ('Accessories') AND service group = 'Accessories') OR\n"
+    "   - (SERV_CATGRY_DESC IN ('Bodyshop') AND service group = 'Bodyshop') OR\n"
+    "   - (SERV_CATGRY_DESC IN ('Charging') AND service group = 'Others') OR\n"
+    "   - (SERV_CATGRY_DESC IN ('En-Route','Pre-Sale/PDI') AND service group = 'Pre-Sale/PDI').\n\n"
+    "10. In the table 'MH_RO_HDR_DETAILS', apply filter: (SERV_CATGRY_DESC IN ('Free Service', 'Paid Service', 'Repair') AND service group = 'Mechanical') OR (SERV_CATGRY_DESC = 'Accessories' AND service group = 'Accessories') OR (SERV_CATGRY_DESC = 'Bodyshop' AND service group = 'Bodyshop') OR (SERV_CATGRY_DESC = 'Charging' AND service group = 'Others') OR (SERV_CATGRY_DESC IN ('En-Route', 'Pre-Sale/PDI') AND service group = 'Pre-Sale/PDI')."
+    "11. Allowed Values for Dealer Zone are [ \"South Zone\", \"North Zone\", \"East Zone\", \"West Zone\"] .Translate natural language queries into SQL using the allowed values (e.g., \"Show sales in the South Zone\" is like WHERE zone_name = 'South Zone').When asked for top Zone (zone_name AS Dealer Zone and area_name AS  Dealer AREA Office) for Word Cloud, use Parent Group Code, Location Code AND prodct_divsn as unique key. Display zone_name AS Dealer Zone, area_name AS  Dealer AREA Office and 'demanded_verbatim' as value for Word Cloud in descending order.Translate natural language queries into SQL using the allowed values (e.g., \"Show sales in the South Zone\" is like WHERE zone_name = 'South Zone').\n"
+    "12. For top zones: group by 'parnt_grop', 'loctn_cd', 'prodct_divsn', show 'zone_name' as Dealer Zone and 'area_name' as Dealer Area Office, use 'demanded_verbatim' as Word Cloud value, ordered by frequency descending, and translate zone filters accordingly.\n"
+    "13. For top models: use 'model_cd' as key, show 'modl_grop_desc' as Model Group Description, 'famly_desc' as FAMILY_DESC, 'delr_name' as Dealer Name, and 'demanded_verbatim' as Word Cloud value, ordered by frequency descending.\n"
+    "14. Include columns in Word Cloud query: Model_Grop, verbatim_group, verbatim_code, cust_verbtm_desc, verbatim_group_desc, demanded_verbatim.\n"
+    "15. Group by 'verbatim_code' to calculate frequency count for Word Cloud.\n"
+),
+'COUNT_OF_REPEAT_REPAIRS': (
+    "Apply business rules:\n"
+
+    "1. USE 'sv_ro_hdr_sk' COLUMN TO JOIN THE TABLES MH_RO_HDR_DETAILS AND MH_CUST_VERBATIM.\n",
+    "2. USE 'sv_ro_bill_hdr_sk' COLUMN TO JOIN THE TABLES MH_RO_HDR_DETAILS AND MH_RO_PARTS.\n",
+    "3. USE 'sv_ro_bill_hdr_sk' COLUMN TO JOIN THE TABLES MH_RO_HDR_DETAILS AND MH_RO_LABOUR.\n",
+    "4. USE MODEL_CD COLUMN TO JOIN THE TABLES MH_MODEL_MASTER AND MH_RO_HDR_DETAILS TO GET MODEL_CO, MODL_GROP_DESC AND FAMILY_DESC INFORMATION.\n",
+    "5. USE parnt_grop, loctn_cd AND prodct_divsn TO JOIN THE TABLES MH_AD_AI_DIMENSION AND MH_RO_HDR_DETAILS TO GET DEALER NAME, DEALER ZONE AND DEALER AREA OFFICE.Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values (e.g., 'Show sales in the South Zone' is like WHERE zone_name = 'South Zone').\n",
+    "6. In MH_RO_HDR_DETAILS, filter: (SERV_CATGRY_DESC IN ('Free Service', 'Paid Service', 'Repair') AND service group = 'Mechanical') OR (SERV_CATGRY_DESC = 'Accessories' AND service group = 'Accessories') OR (SERV_CATGRY_DESC = 'Bodyshop' AND service group = 'Bodyshop') OR (SERV_CATGRY_DESC = 'Charging' AND service group = 'Others') OR (SERV_CATGRY_DESC IN ('En-Route', 'Pre-Sale/PDI') AND service group = 'Pre-Sale/PDI').\n",
+    "7. For 'Count of Repeat Repairs', add filter: repeat_repair_flag = 'Y'.\n",  
+    "8. For 'Count of Repeat Repairs', use commonly sounding Customer VoC 'demanded_verbatim' or same part 'part_code' or same labour 'LABR_CD'.\n",
+    "9. Exclude 'demanded_verbatim' having words like '%SCHEDULE%', '%WASHING%', '%MAXICARE%', '%WHEEL ALIGNMENT%', '%WHEEL BALANCE%', '%WASHING AND CLEANING%', '%PICKUP%', '%DROP OFF%', '%1000, 10000%' for  'Repeat Repairs'.\n",
+    "10. For trend analysis, use RO_Bill_Date to analyze 'demanded_verbatim' OR same part 'part_code' or same labour 'LABR_CD' for 'Repeat Repairs'.\n",
+    "11. When asked for highest or top Customer Verbatim, use count(demanded_verbatim) as Total Customer Verbatim count group by demanded_verbatim for 'Repeat Repairs'.\n",
+    "12. When asked for highest or top part number consumption, use SUM(PART_NUMBR) as Total part number Count  group by PART_NUMBR for 'Repeat Repairs'.\n",
+    "13. When asked for highest or top Labour Code consumption, use SUM(labr_code) as Total Labour Code Count  group by PART_NUMBR for 'Repeat Repairs'.\n",
+    "14. For Top Dealers by part consumption for 'Repeat Repairs': Use parnt_grop, loctn_cd, and prodct_divsn as key; GROUP BY delr_name; SUM(PART_NUMBR) as Total Count, SUM(partAmount) as Total Value; ORDER BY Total Count DESC.\n",
+    "15. Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values. When asked for Top Zone (zone_name as Dealer Zone and area_name as Dealer Area Office) with top parts consumption for 'Repeat Repairs', use Parent Group Code, Location Code AND prodct_divsn as unique key and do the calculation. Display zone_name as Dealer ZONE, area_name as DEALER AREA OFFICE, total sum of PART_NUMBR as Total Count and total sum of partAmount as Total Value, and display in descending order of Total Count by default.\n",
+    "16. For Top Models by part consumption for 'Repeat Repairs': Use model_cd as key; GROUP BY modl_grop_desc, famly_desc; DISPLAY Dealer Name, total sum of PART_NUMBR as Total Count and total sum of partAmount as Total Value, in descending order of Total Count by default.\n",
+    "17. For Top Family_Desc or Model Group for part consumption for 'Repeat Repairs': GROUP BY PART_NUMBR; SELECT PART_NUMBR, PART_DESC, COUNT(PART_NUMBR) as Total Count, SUM(partAmount) as Total Value; FILTER by famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n",
+    "18. For Top Zone, Area, Parent, and Location for part consumption for 'Repeat Repairs': GROUP BY PART_NUMBR; SELECT PART_NUMBR, PART_DESC, COUNT(PART_NUMBR), SUM(partAmount); FILTER by zone_name, area_name, parnt_grop, loctn_name, famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n",
+    "19. For Top Dealers by highest Labour consumption for 'Repeat Repairs': Use parnt_grop, loctn_cd, and prodct_divsn as unique key; GROUP BY delr_name,labr_code; Display delr_name as Dealer Name,labr_code as Labour Code, SUM(STANDRD_HRS) as Total Count, SUM(labrAmount) as Total Value; ORDER BY Total Count DESC.\n",
+    "20. Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values. When asked for highest or Top Zone (zone_name as Dealer Zone and area_name as Dealer Area Office) with highest or Top Labour consumption for 'Repeat Repairs', use Parent Group Code, Location Code AND prodct_divsn as unique key; GROUP BY delr_name,labr_code;. Display zone_name as Dealer ZONE, area_name as DEALER AREA OFFICE, labr_code as Labour Code,total sum of STANDRD_HRS as Total Count and total sum of labrAmount as Total Value, and display in descending order of Total Count by default.\n",
+    "21. For top or highest Models (MODEL_GROUP AND FAMILY_DESC)with top or highest Labour consumption for 'Repeat Repairs': Use model_cd as unique key; GROUP BY modl_grop_desc, famly_desc,labr_code; DISPLAY MODL_GROUP_DESC, FAMILY_DESC, Dealer Name, labr_code as Labour Code, total sum of STANDRD_HRS as Total Count and total sum of labrAmount as Total Value, in descending order of Total Count by default.\n",
+    "22. For Top or highest Labour consumption within a Family or Model Group for 'Repeat Repairs': GROUP BY labr_code; SELECT labr_code, labr_desc, SUM(STANDRD_HRS) as Total Count, SUM(labrAmount) as Total Value; FILTER by famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n",
+    "23. For Top or highest Labour consumption within Zone, Area, Parent, and Location for 'Repeat Repairs': GROUP BY labr_code; SELECT labr_code, labr_desc, SUM(STANDRD_HRS), SUM(labrAmount); FILTER by zone_name, area_name, parnt_grop, loctn_name, famly_desc or modl_grop_desc; ORDER BY Total Count DESC.\n",
+    "24. For Top Dealers by highest Customer Verbatim consumption for 'Repeat Repairs': Use parnt_grop, loctn_cd, and prodct_divsn as unique key; GROUP BY delr_name; Display delr_name as Dealer Name, count(demanded_verbatim) as Customer Verbatim, count(demanded_verbatim) as Total Count ; ORDER BY Total Count DESC.\n",
+    "25. Allowed Values for Dealer Zone are ['South Zone', 'North Zone', 'East Zone', 'West Zone']. Translate natural language queries into SQL using the allowed values. When asked for highest or Top Zone (zone_name as Dealer Zone and area_name as Dealer Area Office) with highest or Top Customer Verbatim for 'Repeat Repairs', use Parent Group Code, Location Code AND prodct_divsn as unique key and do the calculation. Display zone_name as Dealer ZONE, area_name as DEALER AREA OFFICE, count(demanded_verbatim) as Customer Verbatim, count(demanded_verbatim) as Total Count, and display in descending order of Total Count by default.\n",
+    "26. For top or highest Models (MODEL_GROUP AND FAMILY_DESC)with top or highest Customer Verbatim for 'Repeat Repairs': Use model_cd as unique key; GROUP BY modl_grop_desc, famly_desc, demanded_verbatim; DISPLAY MODL_GROUP_DESC, FAMILY_DESC, Dealer Name, count(demanded_verbatim) as Customer Verbatim, count(demanded_verbatim) as Total Count, in descending order of Total Count by default.\n"
+    )
+
+}

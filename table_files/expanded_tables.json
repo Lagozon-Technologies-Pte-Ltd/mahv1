@@ -1,0 +1,132 @@
+[
+  {
+    "id": " mh_ro_hdr_details",
+    "document": "Repair Order Header: Central table for repair lifecycle. Use as the primary (left) table in joins. Related tables (labor, parts, customer feedback) may not always have matching records for every repair order; use LEFT OUTER JOIN when querying them.",
+    "metadata": {
+      "type": "table",
+      "primary_key": "SV_RO_BILL_HDR_SK",
+      "join_guidance": [
+        {
+          "table": "MH_RO_LABOUR",
+          "on": "SV_RO_BILL_HDR_SK",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Not all repair orders have labor records."
+        },
+        {
+          "table": "MH_RO_PARTS",
+          "on": "SV_RO_BILL_HDR_SK",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Not all repair orders have parts records."
+        },
+        {
+          "table": "MH_CUST_VERBATIM",
+          "on": "sv_ro_hdr_sk",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Not all repair orders have customer feedback."
+        },
+        {
+          "table": "MH_MODEL_MASTER",
+          "on": "MODL_CD",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Some repair orders may not have a matching model master."
+        },
+        {
+          "table": "MH_AD_AI_DIMENSION",
+          "on": "parnt_grop LOCTN_CD prodct_divsn",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Some repair orders may not have a matching dealer/location."
+        }
+      ]
+    }
+  },
+  {
+    "id": " mh_ro_labour",
+    "document": "Repair Order Labour: Details of labor for repair orders. Use LEFT OUTER JOIN from repair order header, as not every order has labor.",
+    "metadata": {
+      "type": "table",
+      "primary_key": "SV_RO_BILL_HDR_SK",
+      "join_guidance": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "SV_RO_BILL_HDR_SK",
+          "join_type": "INNER JOIN",
+          "optional": false,
+          "description": "Labor always references a repair order."
+        }
+      ]
+    }
+  },
+  {
+    "id": " mh_ro_parts",
+    "document": "Repair Order Parts: Details of parts for repair orders. Use LEFT OUTER JOIN from repair order header, as not every order has parts.",
+    "metadata": {
+      "type": "table",
+      "primary_key": "SV_RO_BILL_HDR_SK",
+      "join_guidance": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "SV_RO_BILL_HDR_SK",
+          "join_type": "INNER JOIN",
+          "optional": false,
+          "description": "Parts always reference a repair order."
+        }
+      ]
+    }
+  },
+  {
+    "id": " mh_cust_verbatim",
+    "document": "Customer Verbatim: Customer feedback for repair orders. Use LEFT OUTER JOIN from repair order header, as not every order has feedback.",
+    "metadata": {
+      "type": "table",
+      "primary_key": "sv_ro_hdr_sk",
+      "join_guidance": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "sv_ro_hdr_sk",
+          "join_type": "INNER JOIN",
+          "optional": false,
+          "description": "Verbatim feedback always references a repair order."
+        }
+      ]
+    }
+  },
+  {
+    "id": " mh_model_master",
+    "document": "Vehicle Model Master: Details about vehicle models. Use LEFT OUTER JOIN from repair order header, as not every order has a model code.",
+    "metadata": {
+      "type": "table",
+      "primary_key": "MODL_CD",
+      "join_guidance": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "MODL_CD",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Some repair orders may not have a model code."
+        }
+      ]
+    }
+  },
+  {
+    "id": " mh_ad_ai_dimension",
+    "document": "Dealer & Sales Hierarchy: Dealer and sales hierarchy data. Use LEFT OUTER JOIN from repair order header, as not every order has a location code.",
+    "metadata": {
+      "type": "table",
+      "primary_key": "parnt_grop loctn_cd prodct_divsn",
+      "join_guidance": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "parnt_grop loctn_cd prodct_divsn",
+          "join_type": "LEFT OUTER JOIN",
+          "optional": true,
+          "description": "Some repair orders may not have a location code."
+        }
+      ]
+    }
+  }
+]

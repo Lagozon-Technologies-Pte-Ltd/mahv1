@@ -1,0 +1,7 @@
+Intent,Keywords,tables
+PARTS_RUNNING_REPAIR,local part;oem part;table;OEM part;genuine part;original equipment;spares with OEM;exclude filters;most consumed parts;service category;part value;part quantity;part revenue;top replaced OEM parts,MH_RO_PARTS;MH_RO_HDR_DETAILS;MH_MODEL_MASTER;MH_AD_AI_DIMENSION
+LABOUR_RUNNING_REPAIR,labour;Local labor;labour type;labr_type;labr_grop;standard hours;labour amount;standrd_hrs;labr_basc_amnt;service category;running repair;free service;paid service;en-route repair,MH_RO_LABOUR;MH_RO_HDR_DETAILS;MH_MODEL_MASTER;MH_AD_AI_DIMENSION
+PARTS_CODE_CONSUMPTION,Parts Consumption;MH_RO_PARTS;MH_RO_HDR_DETAILS;MH_MODEL_MASTER;MH_AD_AI_DIMENSION
+LABOUR_CODE_CONSUMPTION,Labour Consumption,MH_RO_LABOUR;MH_RO_HDR_DETAILS;MH_MODEL_MASTER;MH_AD_AI_DIMENSION
+WORD_CLOUD_VOC,Customer;Verbatim Codes;Word Cloud;customer complaint;customerverbatim;ROnumber;demandedverbatim;verbatimgroup;verbatimcode;verbatimdescription,MH_CUST_VERBATIM;MH_RO_HDR_DETAILS;MH_MODEL_MASTER;MH_AD_AI_DIMENSION
+COUNT_OF_REPEAT_REPAIRS,verbatim; repair order;ROID;VIN;odometer;segment;RO status;promised delivery;labour total amount;parts total amount;service type,MH_CUST_VERBATIM;MH_RO_HDR_DETAILS;MH_MODEL_MASTER;MH_AD_AI_DIMENSION

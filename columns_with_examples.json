@@ -1,0 +1,3324 @@
+[
+  {
+    "column_name": "mh_model_master.modl_cd",
+    "column_desc": "Model Code: Primary key for MH_MODEL_MASTER. Uniquely identifies a vehicle model. Used to join with MH_RO_HDR_DETAILS.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": true,
+      "is_foreign_key": false,
+      "joins": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "MODL_CD",
+          "join_type": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "THARMM152826380",
+      "THRNM011017096665"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.modl_desc",
+    "column_desc": "Model Description: Text description of the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR CRDE 4WD 6 SEATER AC",
+      "THAR LX D MT 4WD 4S HT BB"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.modl_grop_cd",
+    "column_desc": "Model Group Code: Code representing the group to which the model belongs.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR",
+      "THRN"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.varnt_cd",
+    "column_desc": "Variant Code: Code identifying the variant of the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MM152",
+      "M0110"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.seat_capcty",
+    "column_desc": "Seat Capacity: Number of seats in the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "6",
+      "4"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.modl_invc_desc",
+    "column_desc": "Model Invoice Description: Description used for invoicing this model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR CRDe",
+      "THAR LX D MT 4WD 4S HT BB"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.famly_cd",
+    "column_desc": "Family Code: Code representing the family grouping of the model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "900",
+      "J08"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.colr_cd",
+    "column_desc": "Color Code: Code representing the color of the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "A3MISSILVR",
+      "A3BURNTYLW"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.prodct_divsn",
+    "column_desc": "Product Division: Name or code of the product division for this model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "TH",
+      "IX"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.batch",
+    "column_desc": "Batch: Batch identifier for the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MIST SILVER",
+      "BLAZING BRONZE"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.oem_modl_cd",
+    "column_desc": "OEM Model Code: Code assigned by the OEM for this model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MA545JTRAHD6SC",
+      "AW5068YKT2B1HC01YJ"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.sal_modl_grop",
+    "column_desc": "Sales Model Group: Grouping used for sales categorization.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR",
+      "THRN"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.modl_grop_ordr_by",
+    "column_desc": "Model Group Order By: Integer for ordering within the model group.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "5",
+      "16"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.segmnt_cd",
+    "column_desc": "Segment Code: Code representing the segment of the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PERSONAL",
+      "COMMERCIAL"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.varnt_desc",
+    "column_desc": "Variant Description: Description of the vehicle variant.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR CRDE 4WD BS4",
+      "LX D MT 4WD HT BS6.2"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.famly_desc",
+    "column_desc": "Family Description: Description of the model family.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR CRDe NGT530R ",
+      "New THAR Diesel MT"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.actv_ind",
+    "column_desc": "Active Indicator: Indicates if the model is active.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.modl_grop_desc",
+    "column_desc": "Model Group Description: Description of the model group.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR",
+      "NEW THAR"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.fuel_type",
+    "column_desc": "Fuel Type: Type of fuel used by the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "DIESEL",
+      "PETROL"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.emission",
+    "column_desc": "Emission: Emission standard or value for the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "BS4",
+      "BS6"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.driv",
+    "column_desc": "Drive: Drive type of the vehicle model (e.g., FWD, RWD).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "4WD",
+      "2WD"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.trim_levl",
+    "column_desc": "Trim Level: Trim level of the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "THAR CRDE 4WD BS4",
+      "LX D MT 4WD HT BS6.2"
+    ]
+  },
+  {
+    "column_name": "mh_model_master.transmission",
+    "column_desc": "Transmission: Transmission type of the vehicle model.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_MODEL_MASTER",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "/",
+      "MANUAL"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.delr_name",
+    "column_desc": "Dealer Name: Name of the dealer in the sales and service hierarchy.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "WORLDWIDE AUTOZONE PVT. LTD.",
+      "RAJ VEHICLES PVT. LTD."
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.prodct_divsn",
+    "column_desc": "Product Division: Product division code or name associated with the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "TH",
+      "ZS"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.actv_ind",
+    "column_desc": "Active Indicator: Indicates whether the dealer is active.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.parnt_grop",
+    "column_desc": "Parent Group Code: Code representing the parent group of the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "WRD01",
+      "RAJ01"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.loctn_name",
+    "column_desc": "Location Name: Name of the dealer's location.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "AMRITSAR",
+      "BAHADURGARH"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.loctn_cd",
+    "column_desc": "Location Code: Code representing the dealer's location. Used to join with MH_RO_HDR_DETAILS.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false,
+      "joins": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "LOCTN_CD",
+          "join_type": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "WRD1",
+      "RAJ1"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.delr_cd",
+    "column_desc": "Dealer Code: Primary key for MH_AD_AI_DIMENSION. Uniquely identifies a dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": true,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "SW010141",
+      "SR010671"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.area_name",
+    "column_desc": "Area Name: Name of the sales area for the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Chandigarh",
+      "Delhi 2"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.zone_name",
+    "column_desc": "Zone Name: Name of the sales zone for the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "North Zone",
+      "West Zone"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.asm_name",
+    "column_desc": "ASM Name: Area Sales Manager's name associated with the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MOHAMMAD DAWOOD\r",
+      "Ankush Sharma"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.ccm_name",
+    "column_desc": "CCM Name: Customer Care Manager's name associated with the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Shashank panwar",
+      "PAL YASH"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.rsm_name",
+    "column_desc": "RSM Name: Regional Sales Manager's name associated with the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Rahul Vaidya",
+      "Ashesh Mishra"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.rccm_name",
+    "column_desc": "RCCM Name: Regional Customer Care Manager's name associated with the dealer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "RAVI KHURANA",
+      "SANDEEP MALHOTRA"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.zonal_head_sales",
+    "column_desc": "Zonal Head Sales: Name of the zonal head for sales.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "KHAIRA SANMUKH ",
+      "KUMAR PMANOJ"
+    ]
+  },
+  {
+    "column_name": "mh_ad_ai_dimension.zonal_head_cc",
+    "column_desc": "Zonal Head Customer Care: Name of the zonal head for customer care.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_AD_AI_DIMENSION",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "KHAIRA SANMUKH ",
+      "KUMAR PMANOJ"
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.ro_number",
+    "column_desc": "RO Number: Repair Order number associated with the customer feedback verbatim.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "RO24A014040",
+      "RO25A007880"
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.sv_ro_hdr_sk",
+    "column_desc": "Service RO Header SK: Foreign key to MH_RO_HDR_DETAILS. Links customer feedback to repair order headers.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": true,
+      "is_foreign_key": true,
+      "joins": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "sv_ro_hdr_sk",
+          "join_type": "INNER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "75455606",
+      "79432673"
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.demanded_verbatim",
+    "column_desc": "Demanded Verbatim: Text of the specific issue or request stated by the customer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PAID SERVICE @110,000 KM AS PER SERVICE SCHEDULE ",
+      "TRANSMISSION OIL RENEW "
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.verbatim_group",
+    "column_desc": "Verbatim Group: Code representing the group/category of the verbatim issue.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "ENG",
+      "TRN"
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.verbatim_code",
+    "column_desc": "Verbatim Code: Code identifying the specific type of customer issue.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "ENG1016",
+      "TRN1009"
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.cust_verbtm_desc",
+    "column_desc": "Customer Verbatim Description: Detailed description of the customer's issue or request.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "ENG1016 - Excessive Engine Oil Consumption.",
+      "TRN1009 - Oil Leak - Transmission / Transfer Case / PTU"
+    ]
+  },
+  {
+    "column_name": "mh_cust_verbatim.verbatim_group_desc",
+    "column_desc": "Verbatim Group Description: Description of the verbatim group/category.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_CUST_VERBATIM",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "ENGINE",
+      "TRANSMISSION"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.sv_ro_hdr_sk",
+    "column_desc": "Service RO Header SK: Foreign key to MH_RO_HDR_DETAILS. Links labor records to repair order headers.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": true,
+      "joins": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "sv_ro_hdr_sk",
+          "join_type": "INNER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "56832635",
+      "50775312"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.sv_ro_bill_hdr_sk",
+    "column_desc": "Service RO Bill Header SK: Identifier for the service repair order bill header.This key is used to join the MH_RO_HDR_DETAILS WITH  MH_RO_LABOUR TABLE.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "67564510",
+      "69386032"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.sv_ro_bill_labr_dtl_sk",
+    "column_desc": "Service RO Bill Labour Detail SK: Primary key for MH_RO_LABOUR. Uniquely identifies a labor detail record.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": true,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "232593521",
+      "236248376"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.standrd_hrs",
+    "column_desc": "Standard Hours: Number of standard hours assigned for the labor task.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      1.0,
+      0.2199999988079071
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.sv_labr_mst_sk",
+    "column_desc": "Service Labour Master SK: Identifier for the service labor master record.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "316678077",
+      "192420457"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_desc",
+    "column_desc": "Labour Description: Description of the labor task performed.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Accessories fitment charges",
+      "PAINTING CHARGES"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_tax",
+    "column_desc": "Labour Tax: Tax amount applied to the labor task.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      0.18000000715255737,
+      0.0
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labrAmount",
+    "column_desc": "Labour Amount: Amount charged for the labor task before discounts and taxes.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_rate",
+    "column_desc": "Labour Rate: Rate per hour or per task for the labor performed.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_charg_hrs",
+    "column_desc": "Labour Charged Hours: Number of hours charged for the labor task.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      1.0,
+      0.2199999988079071
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_discnt_amnt",
+    "column_desc": "Labour Discount Amount: Discount applied to the labor amount.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      0.0,
+      96.0
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_totl_amnt",
+    "column_desc": "Labour Total Amount: Total amount for labor after applying discounts and taxes.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      1.1799999475479126,
+      0.0
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.totalBillAmount",
+    "column_desc": "Total Bill Amount: Total bill amount for the labor record, including all charges.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "1",
+      "0"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labour_billable_type_name",
+    "column_desc": "Labour Billable Type Name: Name of the billable type for labor (e.g., warranty, paid, free).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Customer Paid",
+      "Dealer FOC"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labour_type_name",
+    "column_desc": "Labour Type Name: Type or category of the labor performed.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "OEM Defined",
+      "Dealer Defined"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labour_group_name",
+    "column_desc": "Labour Group Name: Group or classification of the labor task.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MAT-779",
+      "LOC-734"
+    ]
+  },
+  {
+    "column_name": "mh_ro_labour.labr_code",
+    "column_desc": "Labour Code: Group or classification of the labor Group.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_LABOUR",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "ACCSFIT",
+      "Z120"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.sv_ro_hdr_sk",
+    "column_desc": "Service RO Header SK: Foreign key to MH_RO_HDR_DETAILS. Links part records to repair order headers.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": true,
+      "joins": [
+        {
+          "table": "MH_RO_HDR_DETAILS",
+          "on": "sv_ro_hdr_sk",
+          "join_type": "INNER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "76741595",
+      "80091711"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.sv_ro_bill_hdr_sk",
+    "column_desc": "Service RO Bill Header SK: Identifier for the service repair order bill header.Identifier for the service repair order bill header.This key is used to join the MH_RO_HDR_DETAILS WITH  MH_RO_PARTS TABLE.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "84785532",
+      "87033134"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.sv_ro_bill_part_dtl_sk",
+    "column_desc": "Service RO Bill Part Detail SK: Primary key for MH_RO_PARTS. Uniquely identifies a part detail record.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": true,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "461609028",
+      "461608892"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_code",
+    "column_desc": "Part Code: Code identifying the part used in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "006009296F1",
+      "62140"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_desc",
+    "column_desc": "Part Description: Description of the part used in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "WASHER SEALING M16.2X21.90X2",
+      "CLIP WORM TYPE NO-2(42-55)"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_quantity",
+    "column_desc": "Part Quantity: Quantity of the part used in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "1",
+      "2"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_rate",
+    "column_desc": "Part Rate: Rate per unit for the part used.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "16.95",
+      "19.49"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.partamount",
+    "column_desc": "Part Amount: Amount charged for the part before discounts and taxes.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "16.95",
+      "19.49"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_tax",
+    "column_desc": "Part Tax: Tax amount applied to the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "3.06",
+      "3.5"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_discnt_amnt",
+    "column_desc": "Part Discount Amount: Discount applied to the part amount.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "7.27"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_totl_amnt",
+    "column_desc": "Part Total Amount: Total amount for the part after applying discounts and taxes.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "20.01",
+      "22.99"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.oem_part_ind",
+    "column_desc": "OEM Part Indicator: Indicates if the part is an OEM part or a local part. It is a BOOLEAN FIELD. If a Part is OEM part then it is Y else if the part is a Local part then it stores N.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.abc_ind",
+    "column_desc": "ABC Indicator: ABC classification indicator for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "B",
+      "C2"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.hml_ind",
+    "column_desc": "HML Indicator: HML classification indicator for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "L",
+      "H"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.landed_cost",
+    "column_desc": "Landed Cost: Landed cost of the part, including all expenses.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "12.76",
+      "13.39"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.ris_ind",
+    "column_desc": "RIS Indicator: RIS classification indicator for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "R",
+      "I"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.purchs_pric",
+    "column_desc": "Purchase Price: Purchase price of the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "12.75",
+      "14.66"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.selng_pric",
+    "column_desc": "Selling Price: Selling price of the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "16.95",
+      "19.49"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.mrp",
+    "column_desc": "MRP: Maximum Retail Price of the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "20",
+      "23"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.hsn",
+    "column_desc": "HSN: Harmonized System Nomenclature code for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "73182200",
+      "73182990"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.net_delr_pric",
+    "column_desc": "Net Dealer Price: Net price for the dealer after all adjustments.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "11.31",
+      "13"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.discnt_rate",
+    "column_desc": "Discount Rate: Discount rate applied to the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "14.3"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.gndp",
+    "column_desc": "GNDP: Gross Net Dealer Price for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "12.75",
+      "14.66"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.ndp",
+    "column_desc": "NDP: Net Dealer Price for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "11.31",
+      "13"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.bill_share",
+    "column_desc": "Bill Share: Share of the bill attributed to this part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "100",
+      "1.5"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.totalBillAmount",
+    "column_desc": "Total Bill Amount: Total bill amount for the part record, including all charges.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "642290",
+      "521120"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_category_description",
+    "column_desc": "Part Category Description: Description of the part's category.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Spares",
+      "Battery"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_billable_type_name",
+    "column_desc": "Part Billable Type Name: Name of the billable type for the part (e.g., warranty, paid, free).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Insurance",
+      "Customer Paid"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.discount_type_name",
+    "column_desc": "Discount Type Name: Name of the discount type applied to the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "AMOUNT",
+      "%"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.product_division_name",
+    "column_desc": "Product Division Name: Name of the product division for the part.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "UV  & Common Spares",
+      "SCORPIO-N SPARES"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_type_name",
+    "column_desc": "Part Type Name: Type or category of the part used in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "GENERAL",
+      "BATTERY"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.part_category_group",
+    "column_desc": "Part Category Group: Group or classification of the part's category.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Spares",
+      "Tyres and batteries"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.common_part_category",
+    "column_desc": "Common Part Category: Common category assigned to the part across multiple models or repairs.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Parts",
+      "Consumables"
+    ]
+  },
+  {
+    "column_name": "mh_ro_parts.category1",
+    "column_desc": "Category1: Additional categorization for the part as per business logic.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_PARTS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PMS & Others",
+      "RR Parts"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_cancl_date",
+    "column_desc": "RO Cancel Date: Date when the repair order was cancelled.It is used to join when users asks a query based on repair order cancel date.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2023-03-27",
+      "2022-11-26"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.spot_care_appl_fl",
+    "column_desc": "Spot Care Applied Flag: Indicates if spot care was applied to the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.vehcl_toe_ind",
+    "column_desc": "Vehicle TOE Indicator: Indicates if the vehicle is classified as TOE (Type of Equipment).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "N",
+      "Y"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.vin",
+    "column_desc": "VIN: Vehicle Identification Number of the vehicle which is there for repair and forms the part of repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MA1PS2GPKC6G67182",
+      "MA1XK2WJXK5C32968"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_date",
+    "column_desc": "RO Date: Date when the repair order was opened or created.It is used to join when users asks a query based on repair order open date or repair order creation date.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2023-02-25",
+      "2022-08-23"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_datetime",
+    "column_desc": "RO DateTime: Timestamp for when the repair order was opened or created.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "TIMESTAMP",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2023-02-25 11:17:00.000000 UTC",
+      "2022-08-23 17:05:00.000000 UTC"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.bill_date",
+    "column_desc": "Bill Date: Date when the repair order or ro or ro_id was billed.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2022-08-23",
+      "2023-06-28"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.bill_datetime",
+    "column_desc": "Bill DateTime: Timestamp for when the repair order or ro or ro_id was billed.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "TIMESTAMP",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2022-08-23 17:38:40.000000 UTC",
+      "2023-06-28 12:50:17.000000 UTC"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_closed_date",
+    "column_desc": "RO Closed Date: Date when the repair order or ro or ro_id was closed.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2022-08-23",
+      "2023-06-28"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_stats",
+    "column_desc": "RO Status: Current status of the repair order or ro or ro_id .",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "CAN",
+      "BIL"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.odmtr_redng",
+    "column_desc": "Odometer Reading: Odometer reading of the vehicle at the time of repair order creation.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "150164",
+      "10855"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.sv_apntmnt_hdr_sk",
+    "column_desc": "Service Appointment Header SK: Identifier for the associated service appointment.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "27611622"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_bill_date",
+    "column_desc": "RO Bill Date: Date when the repair order or ro or ro_id bill was generated.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2022-08-23",
+      "2023-06-28"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.cancl_date",
+    "column_desc": "Cancel Date: Date when the repair order or ro or ro_id was cancelled (alternate field).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2024-09-10",
+      "2024-12-18"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.sv_ro_hdr_sk",
+    "column_desc": "Service RO Header SK: Primary key for MH_RO_HDR_DETAILS to identify any Repair Order or RO or RO_ID. This is related to RO_ID column on one to one basis.Used to join with MH_CUST_VERBATIM TABLE.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false,
+      "joins": [
+        {
+          "table": "MH_CUST_VERBATIM",
+          "on": "sv_ro_hdr_sk",
+          "join_type": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "68633019",
+      "65635708"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.parnt_grop",
+    "column_desc": "Parent Group: Code or name for the parent group associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "DRK01",
+      "PAC01"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.loctn_cd",
+    "column_desc": "Location Code: References dealer/location in MH_AD_AI_DIMENSION. Used for joining repair orders to dealer and sales hierarchy.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": true,
+      "joins": [
+        {
+          "table": "MH_AD_AI_DIMENSION",
+          "on": "LOCTN_CD",
+          "join_type": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "DRK2",
+      "PAC2"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_id",
+    "column_desc": "RO_ID also known as repair order or RO or RO Number or RO No or RO NUM or RO ID: key column used to look  a specefic repair order. It is related to sv_ro_hdr_sk on one to one basis. When users asks a question based on any RO Number or RO ID or RO then this key is used to get the columns sv_ro_bill_hdr_sk to join the table MH_RO_PARTS and sv_ro_bill_hdr_sk to join the table MH_RO_LABOUR tables. ",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "RO23B008470",
+      "RO23B004281"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.parts_totl_amnt",
+    "column_desc": "Parts Total Amount: Total amount billed for parts in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2200.02",
+      "601691.95"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.labr_totl_amnt",
+    "column_desc": "Labour Total Amount: Total amount billed for labor in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "49.56",
+      "124.79"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.doc_amnt",
+    "column_desc": "Document Amount: Total document amount for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2200",
+      "50"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.parts_basc_amnt",
+    "column_desc": "Parts Basic Amount: Basic amount for parts before taxes and discounts.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "1718.76",
+      "601691.95"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.labr_basc_amnt",
+    "column_desc": "Labour Basic Amount: Basic amount for Labour before taxes and discounts.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "42",
+      "105.75"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.sa_emply_name",
+    "column_desc": "Service Advisor Employee Name: Name of the service advisor handling the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PREM JEBASTIN R",
+      "PRADIP DAS"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.promsd_delvry_date",
+    "column_desc": "Promised Delivery Date: Date promised for vehicle delivery to the customer.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2023-02-25 17:17:00.000000 UTC",
+      "2022-08-24 17:05:00.000000 UTC"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.revsd_promsd_delvry_date",
+    "column_desc": "Revised Promised Delivery Date: Revised date promised for vehicle delivery.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2023-03-25 13:30:00.000000 UTC",
+      "2022-08-24 17:05:00.000000 UTC"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.revst_ind",
+    "column_desc": "Revisit Indicator: Indicates if the repair order is a revisit.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.modl_cd",
+    "column_desc": "Model Code: Foreign key to MH_MODEL_MASTER. Used for joining repair orders to vehicle model master data.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": true,
+      "joins": [
+        {
+          "table": "MH_MODEL_MASTER",
+          "on": "MODL_CD",
+          "join_type": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "BOLMM028354267",
+      "BOLPMM4901046996"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.sv_ro_bill_hdr_sk",
+    "column_desc": "Service RO Bill Header SK: Identifier for the repair order bill header. This key is used to join the MH_RO_HDR_DETAILS WITH MH_RO_PARTS TABLE AND MH_RO_HDR_DETAILS WITH MH_RO_LABOUR TABLE",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false,
+      "joins": [
+        {
+          "table": "MH_RO_LABOUR",
+          "on": "sv_ro_bill_hdr_sk",
+          "join_type": "LEFT OUTER JOIN"
+        },
+        {
+          "table": "MH_RO_PARTS",
+          "on": "sv_ro_bill_hdr_sk",
+          "join_type": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    "examples": [
+      "67237546",
+      "73445326"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.onlne_paymnt_flg",
+    "column_desc": "Online Payment Flag: Indicates if the repair order was paid online.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.segmnt_cd",
+    "column_desc": "Segment Code: Code representing the segment of the vehicle for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PERSONAL",
+      "LMM"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.exprs_servc_ind",
+    "column_desc": "Express Service Indicator: Indicates if the repair order was for express service.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.chas_numbr",
+    "column_desc": "Chassis Number: Chassis number of the vehicle in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "C6G67182",
+      "K5C32968"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.key_acnt_segmnt",
+    "column_desc": "Key Account Segment: Key account segment classification for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "EMPLOYEE"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.govt_vehcl",
+    "column_desc": "Government Vehicle: Indicates if the vehicle is a government vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.colr_cd",
+    "column_desc": "Color Code: Code representing the color of the vehicle for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "M1DMNDWHIT",
+      "A0DMNDWHIT"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.oem_modl_cd",
+    "column_desc": "OEM Model Code: OEM-assigned model code for the vehicle in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "BB726F3XH7U3WD",
+      "BH826F4ZSH7U4WD"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.prodct_divsn",
+    "column_desc": "Product Division: Product division associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "BL",
+      "RV"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.part_charg_amnt",
+    "column_desc": "Part Charge Amount: Amount charged for parts in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "481.26",
+      "0"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.labr_charg_amnt",
+    "column_desc": "Labour Charge Amount: Amount charged for labour in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "7.56",
+      "19.04"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.sdd_flag",
+    "column_desc": "SDD Flag: Indicates if Same Day Delivery was applicable for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "65635708"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_gt_72",
+    "column_desc": "RO Greater Than 72 Hours: Indicates if repair order duration exceeded 72 hours. It stores the value of column sv_ro_hdr_sk for repair order duration exceeding 72 hours else it stores 0.It is not a BOOLEAN field.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "58941035"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_lt_et_72",
+    "column_desc": "RO Less Than or Equal To 72 Hours: Indicates if repair order duration was 72 hours or less.It stores the value of column sv_ro_hdr_sk for repair order duration IS equal to less Than 72 hours else it stores 0.It is not a BOOLEAN field.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "65635708"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_lt_et_48",
+    "column_desc": "RO Less Than or Equal To 48 Hours: Indicates if repair order duration was 48 hours or less.It stores the value of column sv_ro_hdr_sk for repair order duration IS equal to less Than 48 hours else it stores 0.It is not a BOOLEAN field.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "65635708"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_lt_et_24",
+    "column_desc": "RO Less Than or Equal To 24 Hours: Indicates if repair order duration was 24 hours or less.It stores the value of column sv_ro_hdr_sk for repair order duration IS equal to less Than 24 hours else it stores 0.It is not a BOOLEAN field.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "65635708"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_close_diff",
+    "column_desc": "RO Close Difference: Number of days or hours between expected and actual close of the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "2"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.tea_flag",
+    "column_desc": "TEA Flag: Special flag for TEA (business-specific meaning).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "70769861"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.cea_flag",
+    "column_desc": "CEA Flag: Special flag for CEA (business-specific meaning).",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "70769861"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.flag_mtraq",
+    "column_desc": "MTRAQ Flag: Flag indicating MTRAQ status for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "1",
+      "0"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.m1_m2_m3_m4",
+    "column_desc": "M1 M2 M3 M4: Consolidated field for multiple business-specific indicators.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "M1",
+      "M4"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.key",
+    "column_desc": "Key: General-purpose key or identifier for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": []
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_key",
+    "column_desc": "RO Key: Specific key associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "C6G67182RO23B008470",
+      "K5C32968RO23B004281"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.key_emp",
+    "column_desc": "Key Employee: Employee key or identifier associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "DRK01DRK21AAM5139",
+      "PAC01PAC21AAJ5924"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.key_bay",
+    "column_desc": "Key Bay: Bay key or identifier for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "DRK01DRK2PERSONALSRV34",
+      "PAC01PAC2PERSONALSRV13"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_day_closed",
+    "column_desc": "RO Day Closed: Number of days taken to close the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "0",
+      "411"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.orgnl_warnty_start_date",
+    "column_desc": "Original Warranty Start Date: The date when the original warranty started for the vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2012-07-27",
+      "2019-04-28"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.rsa_regstrtn_stats",
+    "column_desc": "RSA Registration Status: Status of RSA (Roadside Assistance) registration for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Completed"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.max_to_days_frm_dos",
+    "column_desc": "Max TO Days from DOS: Maximum number of TO (Turn Over) days from Date of Service.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2924",
+      "1462"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.arrived_date_for_eligibility",
+    "column_desc": "Arrived Date for Eligibility: Date when the vehicle arrived for eligibility assessment.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2020-07-29",
+      "2027-04-30"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.rsa_registartion_flag",
+    "column_desc": "RSA Registration Flag: Indicates if RSA registration is flagged for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "RSA Registered",
+      "RSA Not Registered"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.rsa_expry_date",
+    "column_desc": "RSA Expiry Date: Expiry date of the RSA (Roadside Assistance) for the vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2017-07-27",
+      "2022-06-13"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.eligible_vehicle_flag",
+    "column_desc": "Eligible Vehicle Flag: Indicates if the vehicle is eligible for a particular service or benefit.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Eligible Vehicle",
+      "Not Eligible Vehicle"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.orgnl_warnty_expry_date",
+    "column_desc": "Original Warranty Expiry Date: The date when the original warranty expires for the vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2013-07-28",
+      "2022-04-28"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.orgnl_warnty_expry_km",
+    "column_desc": "Original Warranty Expiry KM: Odometer reading (in kilometers) at which the original warranty expires for the vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "999999",
+      "100000"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.warranty_flag",
+    "column_desc": "Warranty Flag: Indicates whether the repair order or vehicle is under warranty.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Non Warranty",
+      "Warranty"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.valid_to",
+    "column_desc": "Valid To: Date until which the repair order, warranty, or service is valid.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "9999-12-31",
+      "2999-12-31"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.shield_validity_flag",
+    "column_desc": "Shield Validity Flag: Indicates whether the shield protection or coverage is currently valid.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Valid Shield",
+      "Invalid Shield"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.scheme_exp_date",
+    "column_desc": "Scheme Expiry Date: Expiry date of any special scheme or offer associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "DATE",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "2026-08-09",
+      "2025-09-09"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.shield_registration_flag",
+    "column_desc": "Shield Registration Flag: Indicates whether the vehicle or repair order is registered for shield protection.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Shield Not Registered",
+      "Shield Registered"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.mrp",
+    "column_desc": "MRP: Maximum Retail Price relevant to the repair order or parts.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "550",
+      "727208.25"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ndp",
+    "column_desc": "NDP: Net Dealer Price associated with the repair order or parts.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "317.84",
+      "375209.33"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.part_qty",
+    "column_desc": "Part Quantity: Quantity of parts used or billed in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "4",
+      "1447.05"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ageing_bucket",
+    "column_desc": "Ageing Bucket: Numeric value indicating the ageing category or bucket for the repair order or parts.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "NUMERIC",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "810",
+      "996"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.brought_by_name",
+    "column_desc": "Brought By Name: Name of the person who brought the vehicle for service.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PARBATBHAI DEVSHIBHAI MALIYA",
+      "SEVEN  HILLS ENTERPRISES"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.vehicle_brought_by",
+    "column_desc": "Vehicle Brought By: Name or identifier of the person who brought the vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "User",
+      "SELF"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.sa_feedbck_stats",
+    "column_desc": "Service Advisor Feedback Status: Status of feedback provided by the service advisor.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.accesories_flag",
+    "column_desc": "Accessories Flag: Indicates if accessories were involved in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "1",
+      "0"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.div_key",
+    "column_desc": "Division Key: Key or code for the division associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "DRK01DRK2BL",
+      "PAC01PAC2BL"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.reg_numbr",
+    "column_desc": "Registration Number: Vehicle registration number associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "TN72AM5808",
+      "ML139166"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_remrks",
+    "column_desc": "RO Remarks: Remarks or notes regarding the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "WIP-WORK IN PROGRESS ",
+      "MGP - IT ISSUSE"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.bay_actv_ind",
+    "column_desc": "Bay Active Indicator: Indicates if the service bay was active for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.appl_to",
+    "column_desc": "Applied To: Indicates what the repair order or service was applied to.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "PER",
+      "LMM"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.warranty_ageing_ro",
+    "column_desc": "Warranty Ageing RO: Ageing value related to warranty for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "3865",
+      "1213"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.warranty_ageing_tday",
+    "column_desc": "Warranty Ageing Today: Ageing value for warranty as of today.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      4675,
+      2209
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.servc_type_desc",
+    "column_desc": "Service Type Description: Description of the type of service performed in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Charging",
+      "En-route Repair"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.serv_catgry_desc",
+    "column_desc": "Service Category Description: Description of the service category for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Charging",
+      "En-Route"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.modl_colr_key",
+    "column_desc": "Model Color Key: Key representing the model and color combination for the vehicle.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "BB726F3XH7U3WD|M1DMNDWHIT",
+      "BH826F4ZSH7U4WD|A0DMNDWHIT"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_source_name",
+    "column_desc": "RO Source Name: Name of the source from which the repair order originated.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Campaign",
+      "RSA / Breakdown"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.service_type_name",
+    "column_desc": "Service Type Name: Name of the service type for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Charging",
+      "En-route Repair"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.repair_order_same_day_delay_reason",
+    "column_desc": "Repair Order Same Day Delay Reason: Reason for delay in same-day repair order completion.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Customer advised additional job later",
+      "Delay due to Major Job not completed in workshop working hours"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.estimation_variation_reason",
+    "column_desc": "Estimation Variation Reason: Reason for variation in repair order cost or time estimation.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Customer requested additional job within 1 hr window before RO closing ",
+      "Other (reasons not listed above)"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.repair_order_cancel_reason",
+    "column_desc": "Repair Order Cancel Reason: Reason for cancellation of the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Others",
+      "RO open with incorrect Service type"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.repair_order_delay_reason",
+    "column_desc": "Repair Order Delay Reason: Reason for any delay in completion of the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Customer requested additional job within 1 hr window before RO closing ",
+      "Other(reasons not listed above)"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.pendency_reason",
+    "column_desc": "Pendency Reason: Reason for any pendency or hold on the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Ready But Not Delivered",
+      "Work In Progress"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.time_revision_approval_reason",
+    "column_desc": "Time Revision Approval Reason: Reason for approval of time revision in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Delay due to additional job identifed after dismantling",
+      "Delay in Repair at shop floor"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.cost_revision_approval_reason",
+    "column_desc": "Cost Revision Approval Reason: Reason for approval of cost revision in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Additional Job identified after dismantling",
+      "Customer requested additional job "
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.pickup_type_name",
+    "column_desc": "Pickup Type Name: Name of the pickup type for the repair order or service.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Customer refused",
+      "Not offered"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.drop_type_name",
+    "column_desc": "Drop Type Name: Name of the drop type for the repair order or service.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Customer refused",
+      "Not offered"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.ro_doc_type_name",
+    "column_desc": "RO Document Type Name: Name of the document type for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Cash",
+      "Credit Card"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.bill_type_name",
+    "column_desc": "Bill Type Name: Name of the bill type for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Cash",
+      "Credit Card"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.service_campaign_type_name",
+    "column_desc": "Service Campaign Type Name: Name of the service campaign type for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Within Workshop"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.tech_employee_name",
+    "column_desc": "Technician Employee Name: Name of the technician who performed the service.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "MUTHU KUMAR",
+      "JAY NAYAK"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.product_division_name",
+    "column_desc": "Product Division Name: Name of the product division associated with the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Bolero",
+      "REVA"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.taxi_indicator",
+    "column_desc": "Taxi Indicator: Indicates if the vehicle is classified as a taxi. It is not a BOOLEAN field. IT stores the values as NON TAXI OR TAXI.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "TAXI",
+      "NON TAXI"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.bay_type_name",
+    "column_desc": "Bay Type Name: Name or type of the service bay used for the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Service Bay",
+      "MMS/DSS/WYH/URT/2WR"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.revist_flag",
+    "column_desc": "Revisit Flag: Indicates if the repair order is a revisit.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.repeat_repair_flag",
+    "column_desc": "Repeat Repair Flag: Indicates if the repair order is for a repeat repair.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Y"
+    ]
+  },
+  {
+    "column_name": "mh_ro_hdr_details.service_group",
+    "column_desc": "Service Group: Group or category of the service performed in the repair order.",
+    "metadata": {
+      "type": "column",
+      "table_name": "MH_RO_HDR_DETAILS",
+      "data_type": "STRING",
+      "nullable": true,
+      "is_primary_key": false,
+      "is_foreign_key": false
+    },
+    "examples": [
+      "Others",
+      "Pre-Sale/PDI"
+    ]
+  }
+]

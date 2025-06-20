@@ -1,0 +1,44 @@
+{
+  "relations": [
+    {
+      "type": "one_to_many",
+      "source": "MH_MODEL_MASTER",
+      "target": "MH_RO_HDR_DETAILS",
+      "source_key": "MODL_CD",
+      "target_key": "MODL_CD",
+      "description": "Model Master to Repair Order or RO Header Details"
+    },
+    {
+      "type": "one_to_many",
+      "source": "MH_AD_AI_DIMENSION",
+      "target": "MH_RO_HDR_DETAILS",
+      "source_key":  ["parnt_grop", "loctn_cd", "prodct_divsn"],
+      "target_key": ["DIV_KEY"],
+      "description": "Dealer Master to Repair Order or RO Header Details (composite key)"
+    },
+    {
+      "type": "one_to_many",
+      "source": "MH_RO_HDR_DETAILS",
+      "target": "MH_RO_PARTS",
+      "source_key": "sv_ro_bill_hdr_sk",
+      "target_key": "sv_ro_bill_hdr_sk",
+      "description": "Repair Order or RO Header to Parts"
+    },
+    {
+      "type": "one_to_many",
+      "source": "MH_RO_HDR_DETAILS",
+      "target": "MH_RO_LABOUR",
+      "source_key": "sv_ro_bill_hdr_sk",
+      "target_key": "sv_ro_bill_hdr_sk",
+      "description": "Repair Order or RO Header to Labour"
+    },
+    {
+      "type": "one_to_many",
+      "source": "MH_RO_HDR_DETAILS",
+      "target": "MH_CUST_VERBATIM",
+      "source_key": "sv_ro_hdr_sk",
+      "target_key": "sv_ro_hdr_sk",
+      "description": "Repair Order or RO Header to Customer Verbatim"
+    }
+  ]
+}

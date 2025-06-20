@@ -1,0 +1,56 @@
+unified_prompt: |
+
+  Your task is to rephrase the user’s query by integrating relevant context from the chat history, strictly preserving key business parameters and phrases unless the user has explicitly changed them. The goal is to produce a clear, structured query that accurately reflects the user's intent and is optimized for SQL generation.
+
+  Steps to follow:
+
+  1. Analyze the chat history: {chat_history}
+  2. Review the user query: {user_query}
+  3. For each of these Key parameters— {key_parameters} .List only those that are present in chat history or user query . Do not include any parameter that is missing from both sources.
+  4. Identify and preserve all key phrases: {keyphrases}, keeping them unchanged.
+  5. Integrate relevant context from the chat history into the user query.
+  6. Ensure the rephrased query is unambiguous and directly suitable for SQL generation.
+
+
+  Example Rephrasing:
+    Chat History 1:
+      - user: "What is the demanded verbatim for RO number 'RO25A007880'?"
+        rephrased: "Retrieve the demanded verbatim for repair order number RO25A007880."
+      - user: "Only include those with feedback category 'Engine'"
+        rephrased: "Retrieve the demanded verbatim for repair order number RO25A007880 with feedback category 'Engine'."
+      - user: "Add service date in the result"
+        rephrased: "Retrieve the demanded verbatim and service date for repair order number RO25A007880 with feedback category 'Engine'."
+      - user: "Show group descriptions too"
+        rephrased: "Retrieve the demanded verbatim, group descriptions, and service date for repair order number RO25A007880 with feedback category 'Engine'."
+    
+    Chat History 2:
+      - user: "Show customer feedback category for RO number 'RO25A007880'"
+        rephrased: "Retrieve the customer feedback category for repair order number RO25A007880."
+      - user: "Filter it to only positive feedbacks"
+        rephrased: "Retrieve the customer feedback category for repair order number RO25A007880 with only positive feedback."
+      - user: "Service advisor name"
+        rephrased: "Retrieve the customer feedback category and service advisor name for repair order number RO25A007880 with only positive feedback."
+      - user: "Restrict to Southern Region"
+        rephrased: "Retrieve the customer feedback category and service advisor name for repair order number RO25A007880 with only positive feedback, limited to the Southern Region."
+    
+    Chat History 3:
+      - user: "What is the demanded verbatim for RO number 'RO18B005320'?"
+        rephrased: "Retrieve the demanded verbatim for repair order number RO18B005320."
+      - user: "Show only those related to transmission issues"
+        rephrased: "Retrieve the demanded verbatim for repair order number RO18B005320 related to transmission issues."
+    
+    Chat History 4:
+      - user: "Show customer feedback category for RO number 'RO19C003760'"
+        rephrased: "Retrieve the customer feedback category for repair order number RO19C003760."
+      - user: "Only include feedbacks rated as negative"
+        rephrased: "Retrieve the customer feedback category for repair order number RO19C003760 with only negative feedback."
+      - user: "Add technician name to the output"
+        rephrased: "Retrieve the customer feedback category and technician name for repair order number RO19C003760 with only negative feedback."
+
+  Expected JSON Output Format:
+    - Return only the JSON object.
+    - Do not include any formatting, markdown, triple backticks, or additional explanations.
+    - The output must start directly with the curly braces character and end with the curly braces.
+    {{
+      "rephrased_query" : "<your rephrased query here>"
+    }}
